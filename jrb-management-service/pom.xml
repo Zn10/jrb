@@ -24,7 +24,7 @@
     <dependencies>
         <dependency>
             <groupId>com.zn</groupId>
-            <artifactId>jrb-management-common</artifactId>
+            <artifactId>jrb-common-util</artifactId>
             <version>1.0</version>
         </dependency>
         <!--swagger-->
