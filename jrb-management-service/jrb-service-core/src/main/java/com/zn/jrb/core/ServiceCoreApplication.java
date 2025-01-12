@@ -13,7 +13,7 @@ import org.springframework.context.annotation.ComponentScan;
  * @author zhaonian
  */
 @SpringBootApplication
-@ComponentScan({"com.zn.jrb"})
+@ComponentScan({"com.zn.jrb","com.zn.common"})
 public class ServiceCoreApplication {
     public static void main(String[] args) {
         SpringApplication.run(ServiceCoreApplication.class, args);

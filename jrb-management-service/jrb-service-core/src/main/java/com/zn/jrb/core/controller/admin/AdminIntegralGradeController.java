@@ -1,6 +1,8 @@
 package com.zn.jrb.core.controller.admin;
 
+import com.zn.common.exception.Assert;
 import com.zn.common.result.R;
+import com.zn.common.result.ResponseEnum;
 import com.zn.jrb.core.pojo.entity.IntegralGrade;
 import com.zn.jrb.core.service.IntegralGradeService;
 import io.swagger.annotations.Api;
@@ -53,6 +55,7 @@ public class AdminIntegralGradeController {
     @ApiOperation("新增积分等级")
     @PostMapping("/save")
     public R save(@ApiParam(value = "积分等级对象", required = true) @RequestBody IntegralGrade integralGrade) {
+        Assert.notNull(integralGrade.getBorrowAmount(), ResponseEnum.BORROW_AMOUNT_NULL_ERROR);
         boolean result = integralGradeService.save(integralGrade);
         if (result) {
             return R.ok().message("保存成功");
