@@ -49,49 +49,40 @@ export const constantRoutes = [
     redirect: '/dashboard',
     children: [{
       path: 'dashboard',
-      name: 'Dashboard',
+      name: '主页',
       component: () => import('@/views/dashboard/index'),
-      meta: { title: 'Dashboard', icon: 'dashboard' }
+      meta: { title: '主页', icon: 'dashboard' }
     }]
   },
-
-
   {
-    path: '/example',
+    path: '/core/integral-grade',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'el-icon-s-help' },
+    redirect: '/core/integral-grade/list',
+    name: 'coreIntegralGrade',
+    meta: { title: '积分等级管理', icon: 'el-icon-s-marketing' },
+    alwaysShow: true,
     children: [
       {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        path: 'list',
+        name: 'coreIntegralGradeList',
+        component: () => import('@/views/core/integral-grade/list'),
+        meta: { title: '积分等级列表' }
       },
       {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
+        path: 'create',
+        name: 'coreIntegralGradeCreate',
+        component: () => import('@/views/core/integral-grade/form'),
+        meta: { title: '新增积分等级' }
+      },
+      {
+        path: 'edit/:id',
+        name: 'coreIntegralGradeEdit',
+        component: () => import('@/views/core/integral-grade/form'),
+        meta: { title: '编辑积分等级' },
+        hidden: true
       }
     ]
   },
-
-
-
-  {
-    path: '/form',
-    component: Layout,
-    children: [
-      {
-        path: 'index',
-        name: 'Form',
-        component: () => import('@/views/form/index'),
-        meta: { title: 'Form', icon: 'form' }
-      }
-    ]
-  }
 ]
 
 /**
